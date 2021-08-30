@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="https://www.omg.org/spec/DMN/20191111/MODEL/" xmlns:dmndi="https://www.omg.org/spec/DMN/20191111/DMNDI/" xmlns:dc="http://www.omg.org/spec/DMN/20180521/DC/" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/2.0" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_1q1682q" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <decision id="Decision_1f9sgm8" name="Customer Discount">
+    <decisionTable id="DecisionTable_09ojkx3">
+      <input id="Input_1" label="Customer Type" biodi:width="192" camunda:inputVariable="customerType">
+        <inputExpression id="InputExpression_1" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_06t985q">
+          <text>"First Time","Regular","VIP"</text>
+        </inputValues>
+      </input>
+      <input id="InputClause_0r7y9yh" label="Drink Type" camunda:inputVariable="drinkType">
+        <inputExpression id="LiteralExpression_0tm1n2o" typeRef="string">
+          <text></text>
+        </inputExpression>
+        <inputValues id="UnaryTests_1pzmmk4">
+          <text>"Espresso","Caffè Mocha","Filter Coffee","Cappuccino"</text>
+        </inputValues>
+      </input>
+      <output id="Output_1" label="Discount" name="discount" typeRef="integer" />
+      <output id="OutputClause_08i1r9p" label="Free Muffin" name="isFreeMuffin" typeRef="boolean" />
+      <rule id="DecisionRule_05lmsb3">
+        <inputEntry id="UnaryTests_1h287l8">
+          <text>"First Time"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vxy9q2">
+          <text>"Espresso"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dix04q">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gdop7m">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0exdxzl">
+        <inputEntry id="UnaryTests_1cii9jh">
+          <text>"First Time"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uxqu9r">
+          <text>"Caffè Mocha"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1qbgny8">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_15vhb4j">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0z9ws5e">
+        <inputEntry id="UnaryTests_0usjybc">
+          <text>"First Time"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xt2hg0">
+          <text>"Cappuccino"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ktb4i3">
+          <text>0</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ljc75u">
+          <text>true</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_10fl3c1">
+        <inputEntry id="UnaryTests_1yfjccr">
+          <text>"First Time"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0egmew1">
+          <text>"Filter Coffee"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1357bke">
+          <text>10</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a1zsco">
+          <text>false</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+  <dmndi:DMNDI>
+    <dmndi:DMNDiagram>
+      <dmndi:DMNShape dmnElementRef="Decision_1f9sgm8">
+        <dc:Bounds height="80" width="180" x="160" y="100" />
+      </dmndi:DMNShape>
+    </dmndi:DMNDiagram>
+  </dmndi:DMNDI>
+</definitions>
